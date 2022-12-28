@@ -75,4 +75,23 @@ function HoistingVaiable()
     z = "not declared before assignments"; // Doesn't compile 
     const z = "The line before forbid this line"; 
 }
-HoistingVaiable()
+// HoistingVaiable()
+
+// Scopes
+// Shadowing Scope ------------------------
+function f1(i: number) {
+    console.log("Parameter value", i);
+    let i: number = 10; 
+}
+// f1(0);
+
+function f2() {
+    let i: number = 10; 
+    if(true){
+        // console.log("Variable in IF before value:", i); // variable used before its declartion -> Hoisting
+        let i: number = 100;
+        console.log("Variable in IF after value:", i);
+    }
+    console.log("Variable value:", i);
+}
+f2();
