@@ -95,3 +95,46 @@ function f2() {
     console.log("Variable value:", i);
 }
 f2();
+
+// Capturing Scope ---------------------
+function mainFunction() {
+    let innerFunction;
+    if (true) {
+        // Environment for capturing start here
+        let variableCapturedByTheInnerFunction = "AvailableToTheInnerFunction";
+        innerFunction = function() {
+            return variableCapturedByTheInnerFunction;
+        }; // Environment for capturing stop here
+    }
+    return innerFunction();
+}
+console.log(mainFunction());
+
+function mainFunction2() {
+    let innerFunction;
+    if (true) {
+        // Environment for capturing start here
+        let variableCapturedByTheInnerFunction = "AvailableToTheInnerFunction";
+        innerFunction = function() {
+            return variableCapturedByTheInnerFunction;
+        }; // Environment for capturing stop here
+        variableCapturedByTheInnerFunction = "Changed"
+    }
+    return innerFunction();
+}
+console.log(mainFunction2());
+
+function mainFunction3() {
+    let innerFunction;
+    let listFunctions = [];
+    for (let i = 10; i < 15; i++) {
+        innerFunction = function(param1: number) {
+            return param1;
+        }
+        listFunctions.push(innerFunction(i));
+    }
+    for (let k = 0; k < 5; k++) {
+        console.log(listFunctions[k]);
+    }
+}
+mainFunction3();
