@@ -37,7 +37,7 @@ function letOutsideFunction() {
 }
 letOutsideFunction();
 
-// Const Object
+// Const Object ---------------------------
 function constObj()
 {
     const user1 = {id:1,name:"name1"}
@@ -59,4 +59,20 @@ function constObj()
     obj2.p2 = "Work!";
 
 }
-constObj();
+// constObj();
+
+// Hoisting Variables ----------------------------
+function HoistingVaiable()
+{
+
+    x = "not declared before assignment"; 
+    var x = "declared after assignment  and all fine"; 
+    console.log(x)
+
+    y = "not declared before assignments"; // Doesn't compile 
+    let y = "The line before forbid this line";; 
+ 
+    z = "not declared before assignments"; // Doesn't compile 
+    const z = "The line before forbid this line"; 
+}
+HoistingVaiable()
