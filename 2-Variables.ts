@@ -178,3 +178,37 @@ function switchFunction(a: number): void {
 switchFunction(1);
 switchFunction(2);
 switchFunction(3);
+
+
+/// Number in TS ------------------------------------------------
+
+const x: number = 10;
+let z: number = 15;
+var p: number = 123;
+console.log("Here are 3 variables of type number", x, z, p);
+
+// Number Base
+let dec: number = 10;
+let hex: number = 0x10;
+let octo: number = 0o10;
+let bin: number = 0b10;
+console.log("Here are 4 numbers", dec, hex, octo, bin);
+
+
+// seprator in number
+const numericSeparator1 = 560000067;
+const numericSeparator2 = 560_000_067;
+const numericSeparator3 = 5_6_0_000_0_6_7;
+const numericSeparator4 = Number(5_000);
+const numericSeparator5 = Number("5_000"); // Nan 
+const numericSeparator6 = parseInt("5_0001");  
+const numericSeparator7 =  0xFAB_F00D; 
+const numericSeparator8 =  0b1111_11111000_11110000_00001100;
+console.log(numericSeparator1)
+console.log(numericSeparator2)
+console.log(numericSeparator3)
+console.log(numericSeparator4)
+console.log(numericSeparator5)
+console.log(numericSeparator6)
+console.log(numericSeparator7)
+console.log(numericSeparator8)
